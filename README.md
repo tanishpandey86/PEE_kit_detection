@@ -177,13 +177,75 @@ VITE_API_BASE_URL=http://localhost:8000
 
 ---
 
+---
+
 ## 📌 Future Improvements
 
-- 🔁 Person tracking (DeepSORT / ByteTrack)  
-- 🔊 Sound alerts for violations  
-- ☁️ Cloud deployment  
-- 📊 Violation history dashboard  
-- 🧠 Model optimization  
+### 🔁 1. Person Tracking (DeepSORT / ByteTrack)
+- Integrate **DeepSORT** or **ByteTrack** for persistent person tracking across frames
+- Assign unique IDs to each detected person
+- Track PPE compliance history per individual over time
+- Useful in large industrial environments with multiple workers
+
+### 🔊 2. Sound Alerts for Violations
+- Trigger **real-time audio alerts** when PPE violations are detected
+- Different alert tones for different missing items (e.g., no helmet vs no gloves)
+- Browser-based implementation using the **Web Audio API**
+- Configurable alert cooldown to prevent repeated noise
+
+### ☁️ 3. Cloud Deployment
+- Dockerize both **FastAPI backend** and **React frontend**
+- Deploy backend on **AWS EC2 / GCP / Railway**
+- Deploy frontend on **Vercel / Netlify**
+- Use **NGINX** as a reverse proxy for production setup
+- Add environment-based config (`.env.production`)
+
+### 📊 4. Violation History Dashboard
+- Log every detected violation with:
+  - Timestamp
+  - Person ID
+  - Missing PPE items
+  - Snapshot image of the violation
+- Store logs in **SQLite / PostgreSQL**
+- Display violation history in a dedicated React dashboard page
+- Export logs as **CSV / PDF reports**
+
+### 🧠 5. Model Optimization
+- Convert YOLOv8 model to **ONNX / TensorRT** format for faster inference
+- Implement **model quantization** for edge deployment (Raspberry Pi, Jetson Nano)
+- Add support for multiple camera streams simultaneously
+- Benchmark and compare inference speeds across formats
+
+### 🔔 6. Email / SMS Notification System
+- Send **email alerts** (via SMTP / SendGrid) when violations are detected
+- Integrate **Twilio** for SMS alerts to supervisors
+- Configurable thresholds (e.g., alert only after 3 consecutive violations)
+- Daily/weekly **violation summary reports** via email
+
+### 👤 7. Role-Based Access Control (RBAC)
+- Add **user authentication** (JWT-based login)
+- Define roles: Admin, Supervisor, Viewer
+- Admins can configure detection settings
+- Supervisors receive alerts and view dashboards
+- Implement using **FastAPI OAuth2 + React Auth Context**
+
+### 📱 8. Mobile App Support
+- Build a **React Native** or **Flutter** mobile app
+- View live detection feed on mobile
+- Receive **push notifications** for violations
+- Works over local network or cloud-deployed backend
+
+### 🗂️ 9. Multi-Site / Multi-Camera Support
+- Support multiple camera feeds from different locations
+- Dashboard with a **grid view** of all camera streams
+- Site-wise violation tracking and reporting
+- Useful for large factories or construction sites
+
+### 🧪 10. Unit & Integration Tests
+- Add **pytest** test suite for backend logic (`utils/logic.py`)
+- Add **React Testing Library** tests for frontend components
+- Set up **GitHub Actions CI/CD** to auto-run tests on every push
+- Achieve minimum **80% code coverage**
 
 ---
 
