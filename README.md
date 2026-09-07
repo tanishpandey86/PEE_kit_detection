@@ -261,10 +261,11 @@ This project is for educational purposes.
 
 ---
 
-## 👨‍💻 Author
+## 🤝 Contributors
 
-**Sumit Kumar**
-
+- **Sumit Kumar**
+- **Satyam Shah**
+- **Tanish Pandey**
 ---
 
 ## ⭐ If you like this project
